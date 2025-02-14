@@ -24,7 +24,7 @@ const About: React.FunctionComponent<AboutProps> = () => {
         topIcon={<AboutIcon />}
         topText="ABOUT MD ADNAN"
         pageHeading="Frontend Engineer"
-        extraText="Frontend Associate Developer skilled in React, TypeScript, and Tailwind CSS, focused on building intuitive and high-performance web applications."
+        extraText="Frontend Associate Developer skilled in React, TypeScript, and Tailwind CSS, focused on building intuitive and high-performance web applications.  "
       />
       <AboutMe />
       <Skills />
