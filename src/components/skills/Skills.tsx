@@ -1,14 +1,11 @@
 import { useContext } from "react";
 import {
-  AntDesignIcon,
   BootstrapIcon,
-  ElectronIcon,
   FigmaIcon,
   FirebaseIcon,
   GitIcon,
   HtmlIcon,
   JavascriptIcon,
-  JqueryIcon,
   MaterialUiIcon,
   NetlifyIcon,
   ReactIcon,
