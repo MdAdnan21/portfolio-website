@@ -29,20 +29,12 @@ interface SkillsProps {}
 const Skills: React.FunctionComponent<SkillsProps> = () => {
   const programmingSkills = [
     {
-      name: "Typescript",
-      icon: <TypescriptIcon />,
-    },
-    {
       name: "Javascript",
       icon: <JavascriptIcon />,
     },
     {
-      name: "Html",
-      icon: <HtmlIcon />,
-    },
-    {
-      name: "Sass",
-      icon: <SassIcon />,
+      name: "Typescript",
+      icon: <TypescriptIcon />,
     },
   ];
 
@@ -68,16 +60,12 @@ const Skills: React.FunctionComponent<SkillsProps> = () => {
       icon: <BootstrapIcon />,
     },
     {
-      name: "Electron",
-      icon: <ElectronIcon />,
+      name: "Html",
+      icon: <HtmlIcon />,
     },
     {
-      name: "Jquery",
-      icon: <JqueryIcon />,
-    },
-    {
-      name: "Ant Design",
-      icon: <AntDesignIcon />,
+      name: "Sass",
+      icon: <SassIcon />,
     },
   ];
 

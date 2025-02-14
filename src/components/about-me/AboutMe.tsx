@@ -11,33 +11,33 @@ const AboutMe: React.FunctionComponent<AboutMeProps> = () => {
     <div className={theme.isDarkmode ? "abtMewrapperDark" : "abtMewrapper"}>
       <div className="abtCont">
         <img
-          src="https://res.cloudinary.com/dt9pwfpi5/image/upload/v1711215109/about_wobdfz.png"
+          src="https://media.istockphoto.com/id/1265176370/photo/portrait-of-a-confident-young-businessman.jpg?s=612x612&w=0&k=20&c=Hr5Rn3WlBied-o4Qu2LiRc6wP_eHI8UMG9rl1v-_a9s="
           alt="ridwan ajanaku"
         />
         <div className="details">
           <AnimatedText
-            text="Meet Ridwan Ajanaku."
+            text="About Adnan."
             className={theme.isDarkmode ? "meetDark" : "meet"}
             once
           />
           <p className={theme.isDarkmode ? "deetsTDark" : "deetsT"}>
-            I am a Frontend Engineer with three years of professional experience
-            based in Lagos, Nigeria. I have a serious passion for UI effects and
-            animations, building pixel perfect web applications, creating
-            dynamic user experiences and making every element on the web
-            accessible to everyone including those with disabilities.
+            I am a Frontend Developer with 1 year of experience, specializing in
+            React, Next.js, TanStack Query, and Zod validation. He is passionate
+            about building intuitive, high-performance web applications with a
+            strong emphasis on efficiency, scalability, and maintainability.
           </p>
           <p className={theme.isDarkmode ? "deetsTDark" : "deetsT"}>
-            Over the past years I have worked in the gaming industry, the health
-            sector and the finance sector. My experience working in these
-            various sectors has helped increase my knowledge in building
-            accessible and user friendly web applications using tools like
-            React, Typescript and Electron for desktop apps.
+            In my previous role, I have played a key role in developing admin
+            panels and e-commerce platforms, ensuring seamless user experiences
+            and optimized workflows. His expertise in state management, API
+            integration, and data validation has contributed to the success of
+            multiple projects.
           </p>
           <p className={theme.isDarkmode ? "deetsTDark" : "deetsT"}>
-            When i'm off my computer you might find me playing FIFA, watching
-            movies, bowling, spending time with friends and family and other
-            activities that helps me unwind.
+            With a detail-oriented approach and a commitment to writing clean,
+            reusable code, I have continuously enhances his skills to stay ahead
+            of industry trends. He thrives in collaborative environments and is
+            always eager to tackle new challenges in frontend development.
           </p>
         </div>
       </div>
