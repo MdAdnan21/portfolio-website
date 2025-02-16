@@ -87,7 +87,7 @@ const ProjectCard: React.FunctionComponent<ProjectCardProps> = ({
           target="_blank"
           aria-label="view more details about the project"
         >
-          <span>View more details </span>
+          <span>Live Link</span>
           <span className="warning">
             <WarningIcon />
           </span>
