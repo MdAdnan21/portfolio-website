@@ -24,7 +24,7 @@ const Works: React.FunctionComponent<WorksProps> = () => {
         topIcon={<FolderIcon />}
         topText="PROJECTS"
         pageHeading="Selected Works"
-        extraText="Not all my projects are included here; some are restricted by NDA"
+        extraText="I have highlighted the key projects below, showcasing my experience and expertise."
       />
       <Projects />
       <Skills />

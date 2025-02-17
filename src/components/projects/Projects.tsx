@@ -9,36 +9,37 @@ interface ProjectsProps {}
 
 export const projects = [
   {
-    name: "Rankaque",
+    name: "FOODZY APP",
     description:
-      "Rankaque is an e-learning fullstack application built with React, Typescript and Python where attendees (students) can ask questions directly to the Facilitators (Lecturers) anonymously. This also helps Facilitators answer questions according to their importance as all questions and ranked.",
+      "Implemented an optimized add-to-cart functionality with lazy loading to enhance performance and resource efficiency, while designing a high-performance, visually engaging, and responsive UI for a seamless user experience.",
     image:
-      "https://res.cloudinary.com/dt9pwfpi5/image/upload/v1702639129/ranks_wd3iac.png",
-    url: "https://rankaque.com",
+      "https://res.cloudinary.com/duayvmlbg/image/upload/v1739779292/irwkyukskalwctyh1tw8.png",
+    url: "https://food-bazaar-app-7tj4.vercel.app/",
   },
   {
-    name: "Carscanner",
+    name: "Job Portal App",
     description:
-      "Carscanner is a web application that allows you to scan cars with your mobile phone camera and get details about them instantly. You can get details like the name, model and year of production of the scanned car.",
+      "Designed and developed a job portal application to streamline the hiring process, enabling job postings, company-based filtering, resume management, and an advanced search system for an improved user experience",
     image:
-      "https://res.cloudinary.com/dt9pwfpi5/image/upload/v1702639129/cscanner_zkoz2k.png",
-    url: "https://carscanner.netlify.app",
+      "https://res.cloudinary.com/duayvmlbg/image/upload/v1739779386/r2pic7i7uynoy7kci6nn.png",
+    url: "https://job-portal-web-ten.vercel.app/",
   },
   {
-    name: "Food Recipe",
+    name: "Hinox Web-App",
     description:
-      "Food recipe is a web application built with React, Typescript and Sass. It allows you view different varieties of recipes across the world, their respective ingredients and a step by step procedure to prepare each recipe.",
+      "Spearheaded the design, development, and continuous optimization of the Hinox application’s user interface, ensuring a highly responsive, user-centric experience with seamless real-time interactions.",
     image:
-      "https://res.cloudinary.com/dt9pwfpi5/image/upload/v1702639129/frecipe_hk4dcv.png",
-    url: "https://foood-recipe.netlify.app/",
+      "https://res.cloudinary.com/duayvmlbg/image/upload/v1739779522/u0jgruyiayy4837wz4fc.png",
+    url: "https://hinox-frontend-v4.vercel.app/launchpad",
   },
+
   {
-    name: "The Shoppies",
+    name: "Task Management App",
     description:
-      "This is a movie listing web application built with React. You can search for any movie and nominate them",
+      "Developed a Task Management application featuring a to-do list with CRUD operations, enabling users to manage tasks across three main stages: To-Do, In Progress, and Completed, for enhanced productivity and organization",
     image:
-      "https://res.cloudinary.com/dt9pwfpi5/image/upload/v1702639129/shopies_nbiyxt.png",
-    url: "https://the-shopies.netlify.app/",
+      "https://res.cloudinary.com/duayvmlbg/image/upload/v1739780143/e8pmxvnojcgs2dcpxpsg.png",
+    url: "https://task-management-eight-orcin.vercel.app/auth/login",
   },
 ];
 

@@ -114,7 +114,7 @@ const Hero: React.FunctionComponent<HeroProps> = () => {
           </div>
           <div className="rightHero">
             <img
-              src="https://res.cloudinary.com/dt9pwfpi5/image/upload/v1711215109/heron_qdeyx8.png"
+              src="https://media.istockphoto.com/id/1265176370/photo/portrait-of-a-confident-young-businessman.jpg?s=612x612&w=0&k=20&c=Hr5Rn3WlBied-o4Qu2LiRc6wP_eHI8UMG9rl1v-_a9s="
               alt="Ridwan-ajanaku"
               draggable={false}
             />
