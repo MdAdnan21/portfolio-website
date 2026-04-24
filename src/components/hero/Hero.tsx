@@ -93,10 +93,11 @@ const Hero: React.FunctionComponent<HeroProps> = () => {
             </p>
             <h2 className="name">I'm Mohammed Adnan </h2>
             <p className="extraDetails">
-              I'm a Frontend Engineer specializing in creating exceptional
-              websites and applications. With a focus on performance,
-              accessibility, and seamless user experiences, I bring ideas to
-              life through clean and Efficient code.
+              I'm a Frontend Engineer specializing in building modern, scalable,
+              and high-performance web applications. With expertise in React.js,
+              TypeScript, and user-focused development, I create responsive,
+              accessible, and maintainable digital experiences that turn ideas
+              into real business value.
             </p>
             <div className="resumeContainer">
               <a className="resume" href="/Resume.pdf" target="_blank">
