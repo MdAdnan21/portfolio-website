@@ -89,7 +89,7 @@ const Header: React.FunctionComponent<HeaderProps> = () => {
         <div onClick={handleHomeClick}>
           <div className="logo">
             <img
-              src="https://res.cloudinary.com/dt9pwfpi5/image/upload/v1700482039/final_jwalyu.png"
+              src="/images/logo.png"
               alt="ridwan ajanaku"
               draggable={false}
             />
