@@ -1,226 +1,176 @@
 import { useContext, useEffect, useState, useRef } from "react";
-import {
-  LightModeIcon,
-  MoonIcon,
-  ScrollUpButton,
-} from "../../assets/icons/icons";
+import { LightModeIcon, MoonIcon } from "../../assets/icons/icons";
 import "./header.scss";
 import { useNavigate, useLocation } from "react-router-dom";
 import { ThemeContext } from "../../App";
 
-interface HeaderProps {}
-
-const Header: React.FunctionComponent<HeaderProps> = () => {
+const Header = () => {
   const navigate = useNavigate();
   const location = useLocation();
-  const [position, setPosition] = useState(window.scrollY);
-  const [visible, setVisible] = useState(false);
-  const [isMobile, setIsMobile] = useState<boolean>(window.innerWidth <= 820);
-  const [showScrollUpButton, setShowScrollUpButton] = useState<boolean>(false);
   const theme = useContext(ThemeContext);
   const headerRef = useRef<HTMLDivElement>(null);
+
+  const [position, setPosition] = useState(window.scrollY);
+  const [visible, setVisible] = useState(false);
+  const [isMobile, setIsMobile] = useState(window.innerWidth <= 820);
+  const [menuOpen, setMenuOpen] = useState(false);
 
   useEffect(() => {
     const handleScroll = () => {
       const moving = window.scrollY;
       setVisible(position < moving);
-      setShowScrollUpButton(true);
-      if (moving < 80) {
-        setVisible(false);
-        setShowScrollUpButton(false);
-      }
+
+      if (moving < 80) setVisible(false);
+
       setPosition(moving);
     };
+
+    const handleResize = () => {
+      setIsMobile(window.innerWidth <= 820);
+    };
+
     window.addEventListener("scroll", handleScroll);
+    window.addEventListener("resize", handleResize);
+
     return () => {
       window.removeEventListener("scroll", handleScroll);
+      window.removeEventListener("resize", handleResize);
     };
-  });
+  }, [position]);
 
   useEffect(() => {
-    window.addEventListener("resize", () => {
-      setIsMobile(window.innerWidth <= 900);
-    });
-    return () => {
-      window.removeEventListener("resize", () => {
-        setIsMobile(window.innerWidth <= 900);
-      });
-    };
-  });
+    if (theme.isDarkmode) {
+      headerRef.current?.classList.replace(
+        "headerWrapper",
+        "headerWrapperDark",
+      );
+    } else {
+      headerRef.current?.classList.replace(
+        "headerWrapperDark",
+        "headerWrapper",
+      );
+    }
+  }, [theme.isDarkmode]);
 
-  const handleHomeClick = () => {
-    navigate("/");
+  const goTo = (path: string) => {
+    navigate(path);
     scrollTo(0, 0);
+    setMenuOpen(false);
   };
 
-  const handleAboutClick = () => {
-    navigate("/about");
-    scrollTo(0, 0);
-  };
-
-  const handleWorksClick = () => {
-    navigate("/works");
-    scrollTo(0, 0);
-  };
-
-  const handleContactClick = () => {
-    navigate("/contact");
-    scrollTo(0, 0);
-  };
-
-  useEffect(() => {
-    theme.isDarkmode
-      ? headerRef.current?.classList.replace(
-          "headerWrapper",
-          "headerWrapperDark",
-        )
-      : headerRef.current?.classList.replace(
-          "headerWrapperDark",
-          "headerWrapper",
-        );
-  }, [theme.isDarkmode, visible]);
-
-  return isMobile ? (
+  return (
     <div
       ref={headerRef}
-      className={visible ? `hidden headerWrapper` : `visible headerWrapper`}
+      className={visible ? "hidden headerWrapper" : "visible headerWrapper"}
     >
       <div className="header">
-        <div onClick={handleHomeClick}>
-          <div className="logo">
-            <img
-              src="/images/logo.png"
-              alt="ridwan ajanaku"
-              draggable={false}
-            />
-          </div>
+        <div className="logo" onClick={() => goTo("/")}>
+          <img src="/images/logo.png" alt="Mohammed Adnan Logo" />
         </div>
-        <div className="header-links">
-          <button
-            className={theme.isDarkmode ? "themeDark" : "theme"}
-            onClick={() => theme.toggleTheme()}
-            aria-label="Toggle theme"
-          >
-            {theme.isDarkmode ? <LightModeIcon /> : <MoonIcon />}
-          </button>
-          <nav role="navigation">
-            <div id={theme.isDarkmode ? "menuToggleDark" : "menuToggle"}>
-              <input type="checkbox" aria-label="checkbox" id="checkobox" />
+
+        {isMobile ? (
+          <div className="mobileNav">
+            <button
+              className={theme.isDarkmode ? "themeDark" : "theme"}
+              onClick={() => theme.toggleTheme()}
+            >
+              {theme.isDarkmode ? <LightModeIcon /> : <MoonIcon />}
+            </button>
+
+            <button
+              className={`menuBtn ${menuOpen ? "active" : ""}`}
+              onClick={() => setMenuOpen(!menuOpen)}
+            >
               <span></span>
               <span></span>
               <span></span>
-              <div id={theme.isDarkmode ? "menuDark" : "menu"}>
-                <p
-                  onClick={handleHomeClick}
-                  className={location.pathname === "/" ? "activeLink" : "links"}
-                >
-                  Home
-                </p>
-                <p
-                  onClick={handleAboutClick}
-                  className={
-                    location.pathname === "/about" ? "activeLink" : "links"
-                  }
-                >
-                  About me
-                </p>
-                <p
-                  onClick={handleWorksClick}
-                  className={
-                    location.pathname === "/works" ? "activeLink" : "links"
-                  }
-                >
-                  Works
-                </p>
-                <p
-                  onClick={handleContactClick}
-                  className={
-                    location.pathname === "/contact" ? "activeLink" : "links"
-                  }
-                >
-                  Contact me
-                </p>
-                <a href="/Resume.pdf" target="_blank">
-                  <p>Resumé</p>
-                </a>
-              </div>
+            </button>
+
+            <div
+              className={`mobileMenu ${
+                menuOpen ? (theme.isDarkmode ? "open dark" : "open") : ""
+              }`}
+            >
+              <button className="closeBtn" onClick={() => setMenuOpen(false)}>
+                ✕
+              </button>
+
+              <p
+                onClick={() => goTo("/")}
+                className={location.pathname === "/" ? "activeLink" : ""}
+              >
+                Home
+              </p>
+
+              <p
+                onClick={() => goTo("/about")}
+                className={location.pathname === "/about" ? "activeLink" : ""}
+              >
+                About me
+              </p>
+
+              <p
+                onClick={() => goTo("/works")}
+                className={location.pathname === "/works" ? "activeLink" : ""}
+              >
+                Works
+              </p>
+
+              <p
+                onClick={() => goTo("/contact")}
+                className={location.pathname === "/contact" ? "activeLink" : ""}
+              >
+                Contact me
+              </p>
+
+              <a href="/Resume.pdf" target="_blank">
+                <p>Resumé</p>
+              </a>
             </div>
-          </nav>
-        </div>
-      </div>
-      {showScrollUpButton && (
-        <button
-          onClick={() => scrollTo(0, 0)}
-          className="scrollUp"
-          aria-label="scroll to top"
-        >
-          <ScrollUpButton />
-        </button>
-      )}
-    </div>
-  ) : (
-    <div
-      ref={headerRef}
-      className={visible ? `hidden headerWrapper` : `visible headerWrapper`}
-    >
-      <div className="header">
-        <div onClick={handleHomeClick}>
-          <div className="logo">
-            <img
-              src="/images/logo.png"
-              alt="Mohammed Adnan Logo"
-              draggable={false}
-            />
           </div>
-        </div>
-        <div className="header-links">
-          <p
-            onClick={handleHomeClick}
-            className={location.pathname === "/" ? "activeLink" : "links"}
-          >
-            Home
-          </p>
-          <p
-            onClick={handleAboutClick}
-            className={location.pathname === "/about" ? "activeLink" : "links"}
-          >
-            About me
-          </p>
-          <p
-            onClick={handleWorksClick}
-            className={location.pathname === "/works" ? "activeLink" : "links"}
-          >
-            Works
-          </p>
-          <p
-            onClick={handleContactClick}
-            className={
-              location.pathname === "/contact" ? "activeLink" : "links"
-            }
-          >
-            Contact me
-          </p>
-          <a href="/Resume.pdf" target="_blank">
-            <p>Resumé</p>
-          </a>
-          <button
-            className={theme.isDarkmode ? "themeDark" : "theme"}
-            onClick={() => theme.toggleTheme()}
-            aria-label="toggle theme"
-          >
-            {theme.isDarkmode ? <LightModeIcon /> : <MoonIcon />}
-          </button>
-        </div>
+        ) : (
+          <div className="header-links">
+            <p
+              onClick={() => goTo("/")}
+              className={location.pathname === "/" ? "activeLink" : ""}
+            >
+              Home
+            </p>
+
+            <p
+              onClick={() => goTo("/about")}
+              className={location.pathname === "/about" ? "activeLink" : ""}
+            >
+              About me
+            </p>
+
+            <p
+              onClick={() => goTo("/works")}
+              className={location.pathname === "/works" ? "activeLink" : ""}
+            >
+              Works
+            </p>
+
+            <p
+              onClick={() => goTo("/contact")}
+              className={location.pathname === "/contact" ? "activeLink" : ""}
+            >
+              Contact me
+            </p>
+
+            <a href="/Resume.pdf" target="_blank">
+              <p>Resumé</p>
+            </a>
+
+            <button
+              className={theme.isDarkmode ? "themeDark" : "theme"}
+              onClick={() => theme.toggleTheme()}
+            >
+              {theme.isDarkmode ? <LightModeIcon /> : <MoonIcon />}
+            </button>
+          </div>
+        )}
       </div>
-      {showScrollUpButton && (
-        <button
-          onClick={() => scrollTo(0, 0)}
-          className="scrollUp"
-          aria-label="scroll to top"
-        >
-          <ScrollUpButton />
-        </button>
-      )}
     </div>
   );
 };

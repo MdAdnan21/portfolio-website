@@ -52,9 +52,7 @@ const About: React.FunctionComponent<AboutProps> = () => {
         }}
         style={{ originX: isPresent ? 0 : 1 }}
         className={
-          theme.isDarkmode
-            ? "route-switch-screen-dark"
-            : "route-switch-screen"
+          theme.isDarkmode ? "route-switch-screen-dark" : "route-switch-screen"
         }
       />
     </div>
