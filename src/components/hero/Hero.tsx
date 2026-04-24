@@ -91,7 +91,7 @@ const Hero: React.FunctionComponent<HeroProps> = () => {
             <p className="hello">
               Hello <span className="wave">👋</span>
             </p>
-            <h2 className="name">I'm Mohammed Adnan</h2>
+            <h2 className="name">I'm Mohammed Adnan T</h2>
             <p className="extraDetails">
               I'm a Frontend Engineer specializing in creating exceptional
               websites and applications. With a focus on performance,
