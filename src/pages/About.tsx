@@ -12,36 +12,49 @@ interface AboutProps {}
 
 const About: React.FunctionComponent<AboutProps> = () => {
   useEffect(() => {
-    scrollTo(0, 0);
+    window.scrollTo(0, 0);
   }, []);
+
   const isPresent = useIsPresent();
   const theme = useContext(ThemeContext);
   const isMobile = window.innerWidth <= 820;
+
   return (
-    <div>
+    <div className={theme.isDarkmode ? "aboutPageDark" : "aboutPage"}>
       <Header />
+
       <PageHero
         topIcon={<AboutIcon />}
-        topText="ABOUT MD ADNAN"
-        pageHeading="Frontend Engineer"
-        extraText="Frontend Associate Developer skilled in React, TypeScript, and Tailwind CSS, focused on building intuitive and high-performance web applications.  "
+        topText="ABOUT MOHAMMED ADNAN"
+        pageHeading="Frontend Engineer & UI Developer"
+        extraText="Passionate Frontend Developer with 4+ years of experience creating modern, responsive, scalable, and performance-driven web applications using React.js, TypeScript, Next.js, Tailwind CSS, and modern frontend architecture."
       />
+
       <AboutMe />
       <Skills />
       <Contact />
+
       <motion.div
         initial={{ scaleX: 1 }}
         animate={{
           scaleX: 0,
-          transition: { duration: isMobile ? 0 : 0.5, ease: "circOut" },
+          transition: {
+            duration: isMobile ? 0 : 0.5,
+            ease: "circOut",
+          },
         }}
         exit={{
           scaleX: 1,
-          transition: { duration: isMobile ? 0 : 0.5, ease: "circIn" },
+          transition: {
+            duration: isMobile ? 0 : 0.5,
+            ease: "circIn",
+          },
         }}
         style={{ originX: isPresent ? 0 : 1 }}
         className={
-          theme.isDarkmode ? "route-switch-screen-dark" : "route-switch-screen"
+          theme.isDarkmode
+            ? "route-switch-screen-dark"
+            : "route-switch-screen"
         }
       />
     </div>

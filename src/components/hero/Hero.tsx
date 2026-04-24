@@ -91,7 +91,7 @@ const Hero: React.FunctionComponent<HeroProps> = () => {
             <p className="hello">
               Hello <span className="wave">👋</span>
             </p>
-            <h2 className="name">I'm Mohammed Adnan T</h2>
+            <h2 className="name">I'm Mohammed Adnan </h2>
             <p className="extraDetails">
               I'm a Frontend Engineer specializing in creating exceptional
               websites and applications. With a focus on performance,
@@ -114,8 +114,8 @@ const Hero: React.FunctionComponent<HeroProps> = () => {
           </div>
           <div className="rightHero">
             <img
-              src="https://media.istockphoto.com/id/1265176370/photo/portrait-of-a-confident-young-businessman.jpg?s=612x612&w=0&k=20&c=Hr5Rn3WlBied-o4Qu2LiRc6wP_eHI8UMG9rl1v-_a9s="
-              alt="Ridwan-ajanaku"
+              src="/public/images/Adnan.png"
+              alt="Profile-Image"
               draggable={false}
             />
           </div>

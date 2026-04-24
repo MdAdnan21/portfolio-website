@@ -72,11 +72,11 @@ const Header: React.FunctionComponent<HeaderProps> = () => {
     theme.isDarkmode
       ? headerRef.current?.classList.replace(
           "headerWrapper",
-          "headerWrapperDark",
+          "headerWrapperDark"
         )
       : headerRef.current?.classList.replace(
           "headerWrapperDark",
-          "headerWrapper",
+          "headerWrapper"
         );
   }, [theme.isDarkmode, visible]);
 
@@ -167,8 +167,8 @@ const Header: React.FunctionComponent<HeaderProps> = () => {
         <div onClick={handleHomeClick}>
           <div className="logo">
             <img
-              src="/public/images/logo.png"
-              alt="Mohammed Adnan Logo"
+              src="https://res.cloudinary.com/dt9pwfpi5/image/upload/v1700482039/final_jwalyu.png"
+              alt="ridwan ajanaku"
               draggable={false}
             />
           </div>
@@ -200,9 +200,9 @@ const Header: React.FunctionComponent<HeaderProps> = () => {
           >
             Contact me
           </p>
-          <a href="/Resume.pdf" target="_blank">
-            <p>Resumé</p>
-          </a>
+       <a href="/images/Resume.pdf" target="_blank" rel="noopener noreferrer">
+  <p>Resumé</p>
+</a>
           <button
             className={theme.isDarkmode ? "themeDark" : "theme"}
             onClick={() => theme.toggleTheme()}
