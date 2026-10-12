@@ -54,7 +54,7 @@ const AboutMe: React.FunctionComponent<AboutMeProps> = () => {
 
             <div className="statCard">
               <h3>100%</h3>
-              <p>Client Focus</p>
+              <p>Client Focus</p> 
             </div>
           </div>
         </div>
@@ -64,3 +64,4 @@ const AboutMe: React.FunctionComponent<AboutMeProps> = () => {
 };
 
 export default AboutMe;
+//about
