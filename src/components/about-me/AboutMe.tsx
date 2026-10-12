@@ -23,7 +23,7 @@ const AboutMe: React.FunctionComponent<AboutMeProps> = () => {
           />
 
           <p className={theme.isDarkmode ? "deetsTDark" : "deetsT"}>
-            I'm Mohammed Adnan, a Frontend Developer with 4+ years of experience
+            I'm Mohammed Adnan, a Frontend Developer with 4 years of experience
             building modern, scalable, and high-performance web applications
             using React.js, Next.js, TypeScript, and JavaScript.
           </p>
@@ -43,7 +43,7 @@ const AboutMe: React.FunctionComponent<AboutMeProps> = () => {
 
           <div className="aboutStats">
             <div className="statCard">
-              <h3>4+</h3>
+              <h3>4</h3>
               <p>Years Experience</p>
             </div>
 
